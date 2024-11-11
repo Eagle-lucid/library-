@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+    <link rel="stylesheet" href="main.css">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/light-font@0.2.63/css/materialdesignicons-light.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <h1> Lucid Library</h1>
+            <div>
+                <label for="search">
+                    <span class="mdil mdil-magnify"></span>
+                </label>
+                <input type="search" name="search" id="search" placeholder="Search Book" required>
+                <ul class="nav-list">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Categories</a></li>
+                    <li><a href="">My Books</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="cards">
+            <div class="book-card" onclick="showDetails('1984')" tabindex="0" role="button">
+                <img src="images/1984.jpg" alt="1984 cover image">
+                <h2 class="tittle">1984</h2>
+                <p class="author">by George Orwell</p>
+            </div>
+           <div class="book-card" onclick="showDetails('Becoming')" tabindex="0" role="button">
+                <img src="images/becoming.jpg" alt="Becoming cover image">
+                <h2 class="tittle">Becoming</h2>
+                <p class="author">by Michelle Obama</p>
+           </div>
+            <div class="book-card" onclick="showDetails('Educated')" tabindex="0" role="button">
+                <img src="images/educated.jpg" alt="Educated cover image">
+                <h2 class="tittle">Educated</h2>
+                <p class="author">by Tara Westover</p>
+            </div>
+            <div class="book-card" onclick="showDetails('To-Kill-a-Mockingbird')" tabindex="0" role="button">
+                <img src="images/mocking.jpg" alt="To Kill a Mockingbird cover image">
+                <h2 class="tittle">To Kill a Mockingbird</h2>
+                <p class="author">by Harper Lee</p>
+            </div>
+            <div class="book-card"  onclick="showDetails('Sapiens')" tabindex="0" role="button">
+                <img src="images/sapiens.jpg" alt="Sapiens: A Brief History of Humankind cover image">
+                <h2 class="tittle">Sapiens: A Brief History of Humankind</h2>
+                <p class="author">by Yuval Noah Harari</p>
+            </div>
+            <div class="book-card" onclick="showDetails('TheGreatGatsby')" tabindex="0" role="button">
+                <img src="images/gatsby.png" alt="The Great Gatsby cover image">
+                <h2 class="tittle">The Great Gatsby</h2>
+                <p class="author">by F. Scott Fitzgerald</p>
+            </div>
+        </div>
+        <button type="submit">Add a Book</button>
+        <div id="book-details"></div>
+    </main>
+    <script src="index.js"></script>
+</body>
+</html>
