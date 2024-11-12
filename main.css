@@ -54,7 +54,6 @@ header nav > h1 {
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 10px;
     padding: 0.5rem;
-    margin: 1rem 0;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
 }
@@ -95,4 +94,48 @@ header nav > h1 {
 .search-con input[type="search"]:focus + label,
 .search-con input[type="search"]:hover + label {
     color: rgba(255, 255, 255, 1);
+}
+.nav-list {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    list-style: none;
+}
+.nav-list a {
+    font-size: var(--myFont-s);
+    font-family: var(--myFont);
+    color: rgb(0, 0, 0);
+    font-style: italic;
+    text-decoration: none;
+    padding: 0.5rem 1rem; /* Adds padding for a larger clickable area */
+    position: relative; /* Allows for positioning the underline effect */
+    display: inline-block;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+.nav-list a:hover { 
+    color: rgb(224, 165, 15); /* Change text color on hover */
+    background: linear-gradient(90deg, rgba(100, 100, 100, 0.6), rgba(150, 150, 150, 0.6)); /* Adds a gradient background */
+    border-radius: 5px; /* Adds subtle rounded corners */
+    padding: 0.5rem 1.2rem; /* Adjust padding for hover */
+    transition: all 0.3s ease;
+}
+.nav-list a:active {
+    transform: scale(1.05); /* Slightly grows the link on click */
+}
+.nav-list a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: rgb(0, 0, 0); 
+    transition: width 0.3s ease; /* Smoothly transition the underline width */
+}
+
+.nav-list a:hover::after {
+    width: 100%; /* Expands underline width on hover */
+    background-color: rgb(255, 255, 255); /* Changes underline color on hover */
 }
