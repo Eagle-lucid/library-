@@ -5,21 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library</title>
     <link rel="stylesheet" href="main.css">
-   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/light-font@0.2.63/css/materialdesignicons-light.min.css">
+    <link rel="stylesheet" href="https://cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css">
 </head>
 <body>
     <header>
         <nav>
             <h1> Lucid Library</h1>
             <div>
-                <label for="search">
-                    <span class="mdil mdil-magnify"></span>
-                </label>
-                <input type="search" name="search" id="search" placeholder="Search Book" required>
+                <div class="search-con">
+                    <label for="search">
+                        <span id="magnify" class="mdi mdi-magnify"></span>
+                    </label>
+                    <input type="search" name="search" id="search" placeholder="Search Book ..." required>
+                </div>
                 <ul class="nav-list">
                     <li><a href="#">Home</a></li>
                     <li><a href="#">Categories</a></li>
-                    <li><a href="">My Books</a></li>
+                    <li><a href="#"><span id="bell" class="mdi mdi-bell"></span>My Books</a></li>
                     <li><a href="#">Contact</a></li>
                 </ul>
             </div>
