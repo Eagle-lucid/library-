@@ -70,21 +70,29 @@
         <div id="addBookModal" class="modal-hidden">
             <h3>Entry Form for New Book</h3>
             <form action="#" id="addBookForm">
-                <label for="book-title">Title:</label>
-                <input type="text" name="title" id="book-title" required>
+                <div class="form">
+                    <label for="book-title">Title:</label>
+                    <input type="text" name="title" id="book-title" placeholder="The 48 Laws of Power" required>
+                </div>
 
-                <label for="book-author">Author:</label>
-                <input type="text" name="author" id="book-author" required>
+               <div class="form">
+                    <label for="book-author">Author:</label>
+                    <input type="text" name="author" id="book-author" placeholder="Robert Greene" required>
+               </div>
 
-                <label for="book-description">Description:</label>
-                <input type="text" name="description" id="book-description" required>
+               <div class="form">
+                    <label for="book-description">Description:</label>
+                    <input type="text" name="description" id="book-description" placeholder="Self-help, Leadership, Psychology, or Business Strategy." required>
+               </div>
 
-                <label for="book-pages">Pages:</label>
-                <input type="number" name="pages" id="book-pages" required>
+               <div class="form">
+                    <label for="book-pages">Pages:</label>
+                    <input type="number" name="pages" id="book-pages" placeholder="452" required>
+               </div>
 
                 <div class="btn-entry-con">
-                    <button type="submit">Add Book</button>
-                    <button type="button" id="closeModal">Cancel</button>
+                    <button type="submit" aria-label="submit">Add Book</button>
+                    <button type="button" id="closeModal" aria-label="cancel">Cancel</button>
                 </div>
             </form>
         </div>
