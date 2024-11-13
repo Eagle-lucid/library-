@@ -1,9 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 *::before,
-*::after {
-    box-sizing: border-box;
-}
-* {
+*::after, * {
     padding: 0;
     margin: 0;
     outline: 0;
@@ -175,8 +172,9 @@ main > .cards {
 .book-card > img {
     object-fit: cover;
     height: auto;
-    max-height: 200px;
+    max-height: 250px;
     width: 100%;
+    max-width: 170px;
     border-radius: 5px;
     transition: transform 0.3s ease;
 }
@@ -200,6 +198,11 @@ main > .cards {
     letter-spacing: 0.5px;
     margin-bottom: 5px;
 }
+.btn-con {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 button[type="submit"] {
     border: none;
     outline: none;
@@ -208,9 +211,6 @@ button[type="submit"] {
     font-family: var(--myFont);
     padding: 0.6rem 1.2rem;
     margin: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     color: rgb(218, 165, 32);
     background-color: rgba(0, 0, 0, 0.9);
     cursor: pointer;
