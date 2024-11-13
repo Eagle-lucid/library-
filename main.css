@@ -15,7 +15,7 @@
     --myFont: 'Roboto', sans-serif;
 }
 body {
-    background: linear-gradient(rgba(100, 100, 100, 0.603), rgba(0, 0, 0, 0.603)), var(--background);
+    background: linear-gradient(rgba(39, 39, 39, 0.767), rgba(0, 0, 0, 0.651)), var(--background);
     min-height: 100vh;
     display: grid;
     grid-template-columns: auto;
@@ -56,6 +56,7 @@ header nav > h1 {
     padding: 0.5rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
+    margin-left: 25%;
 }
 
 .search-con:hover {
@@ -109,20 +110,20 @@ header nav > h1 {
     color: rgb(0, 0, 0);
     font-style: italic;
     text-decoration: none;
-    padding: 0.5rem 1rem; /* Adds padding for a larger clickable area */
-    position: relative; /* Allows for positioning the underline effect */
+    padding: 0.5rem 1rem; 
+    position: relative;
     display: inline-block;
     transition: color 0.3s ease, background-color 0.3s ease;
 }
 .nav-list a:hover { 
-    color: rgb(224, 165, 15); /* Change text color on hover */
+    color: rgb(224, 165, 15);
     background: linear-gradient(90deg, rgba(100, 100, 100, 0.6), rgba(150, 150, 150, 0.6)); /* Adds a gradient background */
-    border-radius: 5px; /* Adds subtle rounded corners */
-    padding: 0.5rem 1.2rem; /* Adjust padding for hover */
+    border-radius: 5px;
+    padding: 0.5rem 1.2rem; 
     transition: all 0.3s ease;
 }
 .nav-list a:active {
-    transform: scale(1.05); /* Slightly grows the link on click */
+    transform: scale(1.05);
 }
 .nav-list a::after {
     content: '';
@@ -132,10 +133,96 @@ header nav > h1 {
     width: 0;
     height: 2px;
     background-color: rgb(0, 0, 0); 
-    transition: width 0.3s ease; /* Smoothly transition the underline width */
+    transition: width 0.3s ease;
 }
 
 .nav-list a:hover::after {
-    width: 100%; /* Expands underline width on hover */
-    background-color: rgb(255, 255, 255); /* Changes underline color on hover */
+    width: 100%; 
+    background-color: rgb(255, 255, 255); 
+}
+#bell {
+    font-size: 1.5rem;
+    margin-right: 5px;
+    color: green;
+}
+main > .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    padding: 20px;
+    align-items: center;
+}
+.cards > .book-card {
+    width: 100%;
+    max-width: 170px;
+    height: auto;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.9);
+    border-radius: 8px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    transition: box-shadow 0.3s ease, border 0.3s ease;
+    cursor: pointer;
+}
+.book-card:hover { 
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+    border: 5px double rgba(255, 255, 255, 0.7);
+}
+.book-card:active {
+    transform: scale(0.98); 
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+}
+.book-card > img {
+    object-fit: cover;
+    height: auto;
+    max-height: 200px;
+    width: 100%;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+.book-card:hover > img {
+    transform: scale(1.05);
+}
+.book-card > .tittle {
+    color: rgb(105, 104, 104);
+    font-size: 1.5rem;
+    font-family: var(--myFont);
+    text-shadow: 1px 1px 2px rgba(247, 182, 2, 0.753);
+    margin-top: 10px;
+}
+.book-card > .author {
+    color: rgb(255, 255, 255);
+    font-size: var(--myFont-s);
+    font-family: var(--myFont);
+    font-style: italic;
+    text-decoration: underline;
+    text-transform: capitalize;
+    letter-spacing: 0.5px;
+    margin-bottom: 5px;
+}
+button[type="submit"] {
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    font-size: var(--myFont-s);
+    font-family: var(--myFont);
+    padding: 0.6rem 1.2rem;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(218, 165, 32);
+    background-color: rgba(0, 0, 0, 0.9);
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.1s ease;
+    
+}
+button[type="submit"]:hover {
+    background-color: rgba(255, 183, 0, 0.8);
+    box-shadow: 0 4px 6px rgba(158, 156, 156, 0.3);
+    color: rgb(0, 0, 0);
+}
+button[type="submit"]:active {
+    transform: scale(0.96); 
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
 }
