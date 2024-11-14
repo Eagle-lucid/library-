@@ -247,7 +247,7 @@ button[type="submit"]:active {
     border-radius: 8px;
     max-width: 550px;
     height: auto;
-    max-height: 450px;
+    max-height: 475px;
     width: 100%; 
 }
 #addBookModal h3 {
@@ -262,7 +262,8 @@ button[type="submit"]:active {
     display: grid;
     margin-bottom: 1rem;
 }
-.form > label {
+.form > label,
+.status > .status-txt {
     color: rgb(218, 165, 32);
     font-size: var(--myFont-s);
     font-family: var(--myFont);
@@ -306,4 +307,16 @@ button[type="button"]:active {
 .btn-entry-con > button[type="submit"]:hover{
     background-color: rgb(0, 128, 0);
     color: rgb(255, 255, 255);
+}
+.status > label{
+    color: rgb(255, 255, 255);
+    font-size: var(--myFont-s);
+    font-family: var(--myFont);
+    margin-right: 15px; 
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+}
+.status input[type="radio"] {
+    margin-right: 5px; /* Space between radio button and label text */
 }

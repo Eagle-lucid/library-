@@ -89,7 +89,20 @@
                     <label for="book-pages">Pages:</label>
                     <input type="number" name="pages" id="book-pages" placeholder="452" required>
                </div>
-
+               <div class="status">
+                <label class="status-txt">Status:</label>
+                
+                <label for="read">
+                    <input type="radio" name="status" id="read" value="read" required>
+                    Read
+                </label>
+                
+                <label for="unread">
+                    <input type="radio" name="status" id="unread" value="unread" required>
+                    Unread
+                </label>
+            </div>
+            
                 <div class="btn-entry-con">
                     <button type="submit" aria-label="submit">Add Book</button>
                     <button type="button" id="closeModal" aria-label="cancel">Cancel</button>
