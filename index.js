@@ -53,3 +53,22 @@ function showDetails(bookTitle) {
         bookDescription.style.display = 'block';
     }
 }
+// Function for hidden form
+const addBookButton = document.getElementById('addBookButton');
+const hiddenForm = document.getElementById('hiddenForm');
+const closeModalButton = document.getElementById('closeModal');
+const formSubmitButton = document.querySelector('.btn-entry-con button[type="submit"]');
+
+// show form when the 'Add button' is clicked
+addBookButton.addEventListener('click', () => {
+    hiddenForm.classList.add('visible');
+});
+// Hide form when 'Cancel' is clicked 
+closeModalButton.addEventListener('click', () => {
+    hiddenForm.classList.remove('visible');
+});
+// Hide the form when 'Add Book' is clicked on the form itself
+formSubmitButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    hiddenForm.classList.remove('visible');
+})
