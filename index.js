@@ -62,13 +62,16 @@ const formSubmitButton = document.querySelector('.btn-entry-con button[type="sub
 // show form when the 'Add button' is clicked
 addBookButton.addEventListener('click', () => {
     hiddenForm.classList.add('visible');
+    addBookButton.style.visibility = 'hidden';
 });
 // Hide form when 'Cancel' is clicked 
 closeModalButton.addEventListener('click', () => {
     hiddenForm.classList.remove('visible');
+    addBookButton.style.visibility = 'visible';
 });
 // Hide the form when 'Add Book' is clicked on the form itself
 formSubmitButton.addEventListener('click', (e) => {
     e.preventDefault();
     hiddenForm.classList.remove('visible');
+    addBookButton.style.visibility = 'visible';
 })
