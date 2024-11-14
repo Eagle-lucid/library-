@@ -27,7 +27,7 @@ const bookData = {
     'Sapiens': {
         title: 'Sapiens: A Brief History of Humankind',
         author: 'Yuval Noah Harari',
-        description: 'A historical account of humankind’s evolution, exploring biology, anthropology, and economics.',
+        description: "A historical account of humankind's evolution, exploring biology, anthropology, and economics.",
         pages: 498,
     },
     'TheGreatGatsby': {
