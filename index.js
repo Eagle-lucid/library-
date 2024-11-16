@@ -78,6 +78,10 @@ function showDetails(bookTitle) {
         bookDescription.style.visibility = 'visible';
         mainSection.classList.add('main-blurred');
         addBookButton.classList.add('hidden');
+
+       setTimeout(() => {
+        document.addEventListener('click', outsideClickListener);
+       }, 100);
     }
 }
 
@@ -85,13 +89,17 @@ function showDetails(bookTitle) {
 function outsideClickListener(event) {
     const bookDescription = document.getElementById('bookDescription');
     const mainSection = document.querySelector('main');
-    const addBookButton = Document.getElementById('addBookButton');
+    const addBookButton = document.getElementById('addBookButton');
 
-    outsideClickListener.addEventListener('click', () => {
-        bookDescription.classList.add('visible');
+     // Check if the click is outside the modal
+     if (!bookDescription.contains(event.target)) {
+        // Hide modal and remove blur
+        bookDescription.style.visibility = 'hidden';
         mainSection.classList.remove('main-blurred');
         addBookButton.classList.remove('hidden');
-    })
+        // Remove the event listener
+        document.removeEventListener('click', outsideClickListener);
+    }
 }
 
 // Function for hidden form

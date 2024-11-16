@@ -345,11 +345,11 @@ button[type="button"]:active {
     width: 100%;
     max-width: 55%;
     height: auto;
-    max-height: 52%;
+    max-height: 56%;
     z-index: 2;
     opacity: 1;
     visibility: hidden;
-    transition: visibility 0.3s, opacity 0.3s ease-in-out;
+    transition: visibility 0.1s ease-in-out, opacity 0.1s ease-in-out; 
 }
 #bookDescription h3 {
     color: rgb(255, 230, 0);
@@ -369,5 +369,7 @@ button[type="button"]:active {
     pointer-events: none;
 }
 #addBookButton.hidden {
-    display: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: visibility 0.3s ease-in-out, opacity 0.3s ease-in-out; 
 }
