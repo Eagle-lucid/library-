@@ -328,7 +328,7 @@ button[type="button"]:active {
 .status input[type="radio"] {
     margin-right: 5px;
 }
-/* An ID to display the 'bookDescription' when the any of the card is been clicked*/
+/* A class to display the 'bookDescription' when the any of the card is been clicked*/
 .modal-description {
     display: flex;
     justify-content: center;

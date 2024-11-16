@@ -78,7 +78,7 @@ function showDetails(bookTitle) {
         bookDescription.style.visibility = 'visible';
         mainSection.classList.add('main-blurred');
         addBookButton.classList.add('hidden');
-
+       //setTimeout and add event Listener
        setTimeout(() => {
         document.addEventListener('click', outsideClickListener);
        }, 100);
