@@ -55,11 +55,15 @@ function showDetails(bookTitle) {
     if(book) {
         bookDescription.innerHTML =
         `
-            <img src="${book.images}" alt="Cover of ${book.title}">
+            <div class="book-details">
+            <img src="${book.image}" alt="Cover of ${book.title}">
+            <div class="book-text">
             <h3>Title: ${book.title}</h3>
             <h3>Author: by ${book.author}</h3>
             <p><strong>Description: </strong>${book.description}</p>
             <p><strong>Pages: </strong>${book.pages}</p>
+            </div>
+            </div>
             <div class="status">
                 <label class="status-txt">Status:</label>
                 
@@ -123,4 +127,4 @@ formSubmitButton.addEventListener('click', (e) => {
     e.preventDefault();
     hiddenForm.classList.remove('visible');
     addBookButton.style.visibility = 'visible';
-})
+});
