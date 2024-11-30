@@ -22,17 +22,18 @@
                     <li><a href="#">Home</a></li>
                     <li><a href="#">Categories</a></li>
                     <li>
-                        <a href="#"><span id="bell" class="mdi mdi-bell"></span>My Books</a>
-                        <span id="notificationBadge" class="hidden"></span>
+                        <a href="#" id="myBookList">
+                            <span id="bell" class="mdi mdi-bell"></span>
+                            <span id="notificationBadge" class="hidden" aria-live="polite">0</span>
+                            My Books
+                        </a>
                     </li>
                     <li><a href="#">Contact</a></li>
                 </ul>
             </div>
         </nav>
-        <!--myBooks dropdown container-->
-        <div id="myBookDropdown" class=" dropdown hidden"></div>
-        <!--hidden modal to show list of books added  by the user-->
-        <div id="bookList" class="book-list"></div>
+        <div id="booksDropdown" class="dropdown"></div>
+        <div id="messageContainer"></div>
     </header>
     <main>
         <div class="cards">
@@ -67,6 +68,7 @@
                 <p class="author">by F. Scott Fitzgerald</p>
             </div>
         </div>
+        <div id="bookList" class="book-list"></div>
         <div class="btn-con">
             <button type="submit" id="addBookButton">New Book</button>
         </div>
