@@ -118,35 +118,29 @@ function outsideClickListener(event) {
 const addBookButton = document.getElementById('addBookButton');
 const hiddenForm = document.getElementById('hiddenForm');
 const closeModalButton = document.getElementById('closeModal');
-const formSubmitButton = document.querySelector('.btn-entry-con button[type="submit"]');
 const addBookForm = document.getElementById('addBookForm');
 
-
-// show form when the 'New button' is clicked
+// Show form when the 'New button' is clicked
 addBookButton.addEventListener('click', () => {
     hiddenForm.classList.add('visible');
     addBookButton.style.visibility = 'hidden';
 });
+
 // Hide form when 'Cancel' is clicked 
 closeModalButton.addEventListener('click', () => {
     hiddenForm.classList.remove('visible');
     addBookButton.style.visibility = 'visible';
 });
-// Hide the form when 'Add Book' is clicked on the form itself
-formSubmitButton.addEventListener('click', (e) => {
-    e.preventDefault();
-    hiddenForm.classList.remove('visible');
-    addBookButton.style.visibility = 'visible';
-});
+
 // Handle form submission (Add Book) and store data
 addBookForm.addEventListener('submit', (e) => {
     e.preventDefault(); // Prevent form from submitting in the default way
 
     // Get the values from the form inputs
-    const title = document.getElementById('book-title').value;
-    const author = document.getElementById('book-author').value;
-    const description = document.getElementById('book-description').value;
-    const pages = document.getElementById('book-pages').value;
+    const title = document.getElementById('book-title').value.trim();
+    const author = document.getElementById('book-author').value.trim();
+    const description = document.getElementById('book-description').value.trim();
+    const pages = document.getElementById('book-pages').value.trim();
     let status = '';
 
     // Get the selected status (read or unread)
@@ -158,20 +152,19 @@ addBookForm.addEventListener('submit', (e) => {
         }
     }
 
-    // Create a new book object
-    const newBook = {
-        title: title,
-        author: author,
-        description: description,
-        pages: pages,
-        status: status
-    };
+    // Validate form
+    if (!title || !author || !description || !pages || !status) {
+        showMessage('Please fill in all fields.', 'error');
+        return;
+    }
 
-    // Add the new book to the book list
+    // Create and add the book to the list
+    const newBook = { title, author, description, pages, status };
     myBookList.push(newBook);
 
-    // Update the book list display
+    // Update the book list display and show success message
     updateBookList();
+    showMessage(`${title} has been added to your book list!`, 'success');
 
     // Close the form modal and reset the form
     hiddenForm.classList.remove('visible');
@@ -179,7 +172,26 @@ addBookForm.addEventListener('submit', (e) => {
     addBookForm.reset();
 });
 
-// Function to update and display the book list from localStorage
+// Utility function to update the book list display
+function updateBookList() {
+    console.log('Updated Book List:', myBookList);
+    // Add your logic to update the DOM with the list of books
+}
+
+// Utility function to display messages
+function showMessage(message, type) {
+    const messageDiv = document.createElement('div');
+    messageDiv.className = `message ${type}`;
+    messageDiv.textContent = message;
+    document.body.appendChild(messageDiv);
+
+    setTimeout(() => {
+        messageDiv.remove();
+    }, 3000); // Message disappears after 3 seconds
+}
+
+
+// Function to update and display the book list from empty array
 function updateBookList() {
     displayBookList();
 }
