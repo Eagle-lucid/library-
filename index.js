@@ -1,4 +1,4 @@
-// localStorage or empty array to store book list
+// empty array to store book list
 const myBookList = [];
 
 // Book details
@@ -193,7 +193,7 @@ function showMessage(message, type) {
 
 // Function to update and display the book list from empty array
 function updateBookList() {
-    displayBookList();
+    updateBookList();
 }
 
 // Function to add books to myBookList
@@ -241,39 +241,64 @@ function showMessage(message, type) {
     }, 3000);
 }
 
-// Display book list from localStorage
-function displayBookList() {
-    const bookListContainer = document.getElementById('bookList');
-    bookListContainer.innerHTML = '';
-    myBookList.forEach(book => {
+const myBookListButton = document.getElementById('myBookList');
+const booksDropdown = document.getElementById('booksDropdown');
+
+// Display bookList in a dropdown
+myBookListButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    booksDropdown.classList.toggle('visible');
+    updateBookList();
+});
+
+// Function to update the dropdown list
+function updateBookList() {
+    // Clear existing content
+    booksDropdown.innerHTML = '';
+
+    if (myBookList.length === 0) {
+        booksDropdown.innerHTML = '<p>No books in your list.</p>';
+        return;
+    }
+
+    // Create and append each book item
+    myBookList.forEach((book) => {
         const bookItem = document.createElement('div');
-        bookItem.classList.add('book-item');
+        bookItem.className = 'dropdown-item';
         bookItem.innerHTML = `
+            <div>
             <h3>${book.title}</h3>
             <p>${book.author}</p>
+            </div>
             <button class="remove-book" data-title="${book.title}">Remove</button>
+            
         `;
-        bookListContainer.appendChild(bookItem);
+        booksDropdown.appendChild(bookItem);
     });
 
-    // Add event listeners for removing books
+    // Attach event listener for remove buttons
     const removeButtons = document.querySelectorAll('.remove-book');
-    removeButtons.forEach(button => {
-        button.addEventListener('click', (e) => {
-            const bookTitle = e.target.getAttribute('data-title');
-            removeBookFromList(bookTitle);
-        });
-    });
+    removeButtons.forEach(button => button.addEventListener('click', (event) => {
+        const bookTitle = event.target.getAttribute('data-title');
+        removeBookFromList(bookTitle);
+    }));
 }
 
-// Function to remove a book from the list
+// Function to remove a book
 function removeBookFromList(bookTitle) {
     const bookIndex = myBookList.findIndex(book => book.title === bookTitle);
     if (bookIndex !== -1) {
         myBookList.splice(bookIndex, 1);
-        updateBookList();
+        updateBookList(); // Refresh the book list
     }
 }
 
+// Hide the dropdown when clicked outside
+document.addEventListener('click', (event) => {
+    if (!booksDropdown.contains(event.target) && event.target !== myBookListButton) {
+        booksDropdown.classList.remove('visible');
+    }
+});
+
 // Initial display of the book list
-displayBookList();
+updateBookList();

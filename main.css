@@ -404,17 +404,61 @@ button[type="button"]:active {
 }
 .dropdown {
     position: absolute;
-    background-color: rgba(255, 255, 255, 0.9);
-    border: 1px solid rgb(221, 221, 221);
+    background-color: rgba(0, 0, 0, 0.9);
+    border: 1px solid rgb(49, 48, 48);
+    border-radius: 10px;
     padding: 10px;
-    width: 200px;
-    max-height: 300px;
+    margin-right: 15%;
+    max-height: 500px;
     overflow-y: auto;
     display: none;
+    color: rgb(255, 255, 255);
+    font-size: var(--myFont-s);
+    font-family: 'Times New Roman', Times, serif;
 }
 .dropdown.visible {
     display: block;
 }
 .hidden {
     display: none;
+}
+.dropdown-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 5px;
+    max-width: 250px;
+    height: auto;
+    padding: 5px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+}
+.dropdown-item h3 {
+    font-size: 1.2rem;
+    font-family: var(--myFont);
+    color: rgb(0, 0, 0);
+    text-decoration: underline;
+}
+.dropdown-item p {
+    font-size: var(--myFont-s);
+    font-family: var(--myFont);
+    text-transform: capitalize;
+    font-style: italic;
+    color: rgb(218, 165, 32);
+}
+.dropdown-item .remove-book {
+    background-color: rgb(255, 0, 0);
+    box-shadow: 0 4px 6px rgba(158, 156, 156, 0.3);
+    color: rgb(0, 0, 0);
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    font-size: var(--myFont-s);
+    font-family: var(--myFont);
+    padding: 0.3rem 1rem;
+    margin: 5px;
+    cursor: pointer;
 }
